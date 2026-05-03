@@ -1,0 +1,16 @@
+category,item,amount,notes
+Fundraising,Favor check,5000,Reported fundraising collected since January
+Fundraising,February football pool,1250,Reported fundraising collected
+Fundraising,February BBQ,1000,Reported fundraising collected
+Fundraising,April Hotshots tournament,4000,Reported fundraising collected
+Fundraising Total,Total fundraising,11250,Subtotal
+Dues,Monthly dues per player,150,Per month per player
+Dues,Players,11,Team count
+Dues,3 months dues total,4950,150 x 11 x 3
+Collected Total,Fundraising plus dues,16200,11250 + 4950
+Expense,Tournaments Feb-March,-1550,Reported tournament costs
+Expense,April tournaments,-450,Two canceled / one free entry noted
+Expense,May-June estimate,-2200,Estimated for four tournaments
+Expense,Practice fields,-4500,Gateway/McMaster Feb 1-July 15
+Expense Total,Total expenses,-8700,Practice + tournaments
+Estimated Balance,Remaining balance,7500,Requires bank/Venmo/nonprofit verification
