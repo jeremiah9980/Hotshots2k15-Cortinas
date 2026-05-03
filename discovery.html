@@ -1,1 +1,109 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Discovery</title><link rel="stylesheet" href="css/portal.css"><script src="js/live-data.js"></script></head><body data-page="discovery"><nav><div class="nav-inner"><a href="index.html">Home</a><a class="active" href="discovery.html">Discovery</a><a href="data/discovery.csv">CSV</a></div></nav><main><section><h2>Discovery Request Checklist</h2><input id="search" placeholder="Search requests..."><div id="data-table"></div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Discovery — Hotshots 2K15 Intelligence Portal</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="dossier-header">
+  <div class="dossier-header__inner">
+    <a href="index.html" class="dossier-header__brand"><span>Hotshots 2K15 Intelligence Portal</span></a>
+    <span class="dossier-header__case">Case File &middot; AHCTX&#8209;2025&#8209;001</span>
+  </div>
+</header>
+<nav class="primary"><ul><li><a href="index.html">Dashboard</a></li><li><a href="executive-summary.html">Executive Summary</a></li><li><a href="entity-structure.html">Entity Structure</a></li><li><a href="financials.html">Financials</a></li><li><a href="behavioral-analysis.html">Behavioral Analysis</a></li><li><a href="timeline.html">Timeline</a></li><li><a href="communications.html">Communications</a></li><li><a href="evidence.html">Evidence</a></li><li><a href="discovery.html" class="active">Discovery</a></li><li><a href="regulatory-actions.html">Regulatory Actions</a></li></ul></nav>
+
+<main class="dossier">
+  <div class="page-head">
+    <div class="page-head__kicker">Discovery Checklist</div>
+    <h1>Discovery &middot; Records to Request</h1>
+    <p class="page-head__lede">Specific records that should be requested or subpoenaed if this matter advances. Items are organized by source, with the regulator or process that has authority to compel each.</p>
+  </div>
+  
+    <section class="block">
+      <h2 class="section-title" data-num="01">From Mark Cortinas / Hotshots 2K15-Cortinas</h2>
+      <ul class="findings">
+        <li><strong>Personal Chase account statements</strong> tied to Venmo, for periods covering team payments &mdash; full transaction detail.</li>
+        <li><strong>Dues collection ledger</strong> &mdash; per family, per month, paid/unpaid, including waiver decisions.</li>
+        <li><strong>Required-gear receipts</strong> &mdash; uniforms, practice gear, rolling bags, helmets, stirrups &mdash; with markup vs. cost.</li>
+        <li><strong>Tournament entry receipts</strong> &mdash; for every event the team entered.</li>
+        <li><strong>Refund / cancellation documentation</strong> for any cancelled events.</li>
+        <li><strong>Communication records</strong> referencing the dues waiver decision after Brian's removal.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="02">From Active Horizons of Central Texas (501(c)(3))</h2>
+      <ul class="findings">
+        <li><strong>Bank account statements</strong> for the org &mdash; full history.</li>
+        <li><strong>Form 1023 application</strong> &mdash; original, with all schedules.</li>
+        <li><strong>Form 990-N filings</strong> for every year filed.</li>
+        <li><strong>Zeffy / fundraising platform reports</strong> &mdash; deposits and disbursements.</li>
+        <li><strong>Disbursement records</strong> &mdash; every check, ACH, or transfer out, with stated purpose.</li>
+        <li><strong>Officer and director list</strong> with election dates.</li>
+        <li><strong>Bylaws and conflict-of-interest policy</strong>.</li>
+        <li><strong>Board meeting minutes</strong> for the past 24 months.</li>
+        <li><strong>Donor list</strong> with anonymized identifiers.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="03">From Texas Secretary of State</h2>
+      <ul class="findings">
+        <li><strong>Certificate of Formation</strong> for the nonprofit corporation.</li>
+        <li><strong>Registered agent record</strong>.</li>
+        <li><strong>Annual public information reports</strong> (multi-year).</li>
+      </ul>
+      <p class="muted">Available through SOSDirect (sosdirect.sos.state.tx.us) for ~$1 per record. Not subpoena-required.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="04">From Texas Comptroller of Public Accounts</h2>
+      <ul class="findings">
+        <li><strong>Sales / franchise tax exemption record</strong> for Active Horizons.</li>
+        <li><strong>Officer and director records</strong> as filed for state purposes.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="05">From Hotshots Organization</h2>
+      <ul class="findings">
+        <li>Confirmation of relationship between the for-profit Hotshots brand and the Active Horizons 501(c)(3).</li>
+        <li>Whether Hotshots Nation is aware of and authorizes the parallel use of a 501(c)(3) and personal account by an affiliated team.</li>
+        <li>Any standards Hotshots imposes on member teams for financial transparency.</li>
+      </ul>
+    </section>
+  
+</main>
+
+<footer class="dossier-foot">
+  <div class="dossier-foot__inner">
+    <div>
+      <strong>Hotshots 2K15 Intelligence Portal</strong> &middot;
+      Compiled by Jeremiah Cargill &middot;
+      <span class="mono">Last updated: 2026-05-02</span>
+    </div>
+    <div>
+      Findings based on public records and direct firsthand information.
+      Validate against primary sources before regulatory filing.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var n=document.querySelector('nav.primary');
+  var ul=n&&n.querySelector('ul');
+  if(!n||!ul)return;
+  function chk(){var s=ul.scrollLeft+ul.clientWidth<ul.scrollWidth-2;n.classList.toggle('is-scrollable',s);}
+  chk();ul.addEventListener('scroll',chk);window.addEventListener('resize',chk);
+  // Auto-scroll active item into view
+  var a=ul.querySelector('a.active');if(a){a.scrollIntoView({inline:'center',block:'nearest'});}
+})();
+</script>
+</body>
+</html>

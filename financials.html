@@ -1,1 +1,157 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Financials</title><link rel="stylesheet" href="css/portal.css"><script src="js/live-data.js"></script></head><body data-page="financials"><nav><div class="nav-inner"><a href="index.html">Home</a><a class="active" href="financials.html">Financials</a><a href="data/financials.csv">CSV</a></div></nav><main><section><h2>Financial Reconciliation</h2><input id="search" placeholder="Search financial records..."><div id="data-table"></div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Financials — Hotshots 2K15 Intelligence Portal</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="dossier-header">
+  <div class="dossier-header__inner">
+    <a href="index.html" class="dossier-header__brand"><span>Hotshots 2K15 Intelligence Portal</span></a>
+    <span class="dossier-header__case">Case File &middot; AHCTX&#8209;2025&#8209;001</span>
+  </div>
+</header>
+<nav class="primary"><ul><li><a href="index.html">Dashboard</a></li><li><a href="executive-summary.html">Executive Summary</a></li><li><a href="entity-structure.html">Entity Structure</a></li><li><a href="financials.html" class="active">Financials</a></li><li><a href="behavioral-analysis.html">Behavioral Analysis</a></li><li><a href="timeline.html">Timeline</a></li><li><a href="communications.html">Communications</a></li><li><a href="evidence.html">Evidence</a></li><li><a href="discovery.html">Discovery</a></li><li><a href="regulatory-actions.html">Regulatory Actions</a></li></ul></nav>
+
+<main class="dossier">
+  <div class="page-head">
+    <div class="page-head__kicker">Reconstructed Ledger</div>
+    <h1>Financial Reconciliation</h1>
+    <p class="page-head__lede">A reconstruction from family reporting, posted fundraisers, and known team expenses. No primary records have been produced by the team or the affiliated 501(c)(3) in 18+ months.</p>
+  </div>
+  
+    <section class="block">
+      <div class="stat-strip">
+        <div class="stat stat--in">
+          <div class="stat__label">Total Collected</div>
+          <div class="stat__value money--in">$16,200</div>
+        </div>
+        <div class="stat stat--out">
+          <div class="stat__label">Documented Expenses</div>
+          <div class="stat__value money--out">$8,700</div>
+        </div>
+        <div class="stat stat--gap">
+          <div class="stat__label">Unaccounted Balance</div>
+          <div class="stat__value money--gap">$7,500</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;">
+        <span class="legend-chip"><span class="legend-chip__swatch legend-chip__swatch--in"></span>Collected by Mark (dues / nonprofit / fundraisers)</span>
+        <span class="legend-chip"><span class="legend-chip__swatch legend-chip__swatch--out"></span>Legitimate team operations</span>
+        <span class="legend-chip"><span class="legend-chip__swatch legend-chip__swatch--gap"></span>Unaccounted gap</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="01">Inflows &mdash; Money Collected by Mark</h2>
+      <p class="muted" style="margin-top:-6px;">All amounts <span style="color:var(--money-in);font-weight:700;">green with +</span> indicate funds collected by Mark Cortinas through player dues, the affiliated 501(c)(3), or team-executed fundraisers.</p>
+      <table class="ledger">
+        <thead>
+          <tr><th>Date / Period</th><th>Source</th><th>Type</th><th>Amount</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monthly, ~6 mo</td><td>Player dues</td><td>Recurring</td><td class="num money--in">$4,950</td><td>~$150 &times; 11 families &times; ~3 mo (pre-waiver)</td></tr>
+          <tr><td>~3 mo window</td><td>Football pool</td><td>Fundraiser</td><td class="num money--in">$3,000</td><td>Estimated</td></tr>
+          <tr><td>5/10/2025</td><td>BBQ fundraiser</td><td>Fundraiser</td><td class="num money--in">$2,500</td><td>Posted publicly by @_crystal_cortinas; "everything goes back to the team"</td></tr>
+          <tr><td>Tournament hosting</td><td>Hotshots Fall Tournament</td><td>Event</td><td class="num money--in">$3,500</td><td>Sold via Zeffy through Active Horizons 501(c)(3)</td></tr>
+          <tr><td>Various</td><td>Bat raffles, Favor pickup, donations</td><td>Misc fundraisers</td><td class="num money--in">$2,250</td><td>Estimated aggregate</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3"><strong>TOTAL ESTIMATED INFLOWS</strong></td><td class="num money--in">$16,200</td><td></td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="02">Outflows &mdash; Legitimate Team Operations</h2>
+      <p class="muted" style="margin-top:-6px;">All amounts <span style="color:var(--money-out);font-weight:700;">red with &minus;</span> indicate documented operational expenses required to run the team (tournaments, fields, sanctioning, insurance).</p>
+      <table class="ledger">
+        <thead>
+          <tr><th>Category</th><th>Item</th><th>Amount</th><th>Paid&nbsp;by</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tournaments</td><td>Entry fees, ~6 events</td><td class="num money--out">$3,600</td><td>Team</td></tr>
+          <tr><td>Field rental</td><td>Practice / scrimmages</td><td class="num money--out">$1,200</td><td>Team</td></tr>
+          <tr><td>Umpire / sanctioning</td><td>NCS, USSSA, etc.</td><td class="num money--out">$900</td><td>Team</td></tr>
+          <tr><td>Equipment (team)</td><td>Balls, training aids</td><td class="num money--out">$500</td><td>Team</td></tr>
+          <tr><td>Insurance / org fees</td><td>Hotshots organization</td><td class="num money--out">$1,500</td><td>Team</td></tr>
+          <tr><td>Misc / travel</td><td>Operations</td><td class="num money--out">$1,000</td><td>Team</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2"><strong>TOTAL TEAM-LEVEL EXPENSES</strong></td><td class="num money--out">$8,700</td><td></td></tr>
+        </tfoot>
+      </table>
+      <p class="muted">Note: Uniforms (~$200/set), practice gear (~$100), required rolling bag (~$150), helmets, and stirrups are <em>paid out-of-pocket by families separately</em>, on top of dues. None of these family-paid items appear in either the inflow or outflow totals above.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="03">The Three Money Rails</h2>
+      <p>Family payments to a single team are reportedly accepted across three legally distinct destinations:</p>
+      <div class="flow">
+        <div class="flow__row">
+          <div class="flow__node">
+            <strong>Rail 1: For-profit Hotshots</strong>
+            <small>Brand fees, gear markup, organization dues</small>
+          </div>
+          <div class="flow__arrow">+</div>
+          <div class="flow__node">
+            <strong>Rail 2: Active Horizons 501(c)(3)</strong>
+            <small>Tournament fundraising via Zeffy; tax-deductible donations</small>
+          </div>
+          <div class="flow__arrow">+</div>
+          <div class="flow__node flow__node--alarm">
+            <strong>Rail 3: Personal Chase</strong>
+            <small>Venmo-linked, in coach's name</small>
+          </div>
+        </div>
+      </div>
+      <p>Each rail has different legal requirements, different tax treatment, and different accountability standards. Co-mingling across rails &mdash; especially mixing charitable funds with personal accounts &mdash; is a fundamental fiduciary violation regardless of intent.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="04">The Timing Tell</h2>
+      <div class="pull">May dues collected as normal &rarr; the assistant coach asking about the money is removed &rarr; the rest of the season is suddenly &ldquo;free.&rdquo;</div>
+      <p>That sequence does two things at once. It looks like retaliation against the person asking inconvenient questions, and it tacitly admits there was always enough money for the season to be free. If the program were genuinely running tight, you cannot flip a switch and waive months of dues. The switch existing means the money was there &mdash; it just was not being applied to offset family costs while the questions were being asked from inside.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title" data-num="05">Material Risk Signal</h2>
+      <div class="callout callout--alarm">
+        <div class="callout__head">Reconciliation Gap</div>
+        <div class="callout__body">Fundraising alone (~$11,250) was sufficient to cover the entire season's team-level expenses (~$8,700). Despite this, families contributed an additional ~$4,950 in dues with no documented allocation. The unaccounted balance of <strong>~$7,500</strong> represents a material transparency gap that has not been reconciled across any of the three money rails.</div>
+      </div>
+    </section>
+  
+</main>
+
+<footer class="dossier-foot">
+  <div class="dossier-foot__inner">
+    <div>
+      <strong>Hotshots 2K15 Intelligence Portal</strong> &middot;
+      Compiled by Jeremiah Cargill &middot;
+      <span class="mono">Last updated: 2026-05-02</span>
+    </div>
+    <div>
+      Findings based on public records and direct firsthand information.
+      Validate against primary sources before regulatory filing.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var n=document.querySelector('nav.primary');
+  var ul=n&&n.querySelector('ul');
+  if(!n||!ul)return;
+  function chk(){var s=ul.scrollLeft+ul.clientWidth<ul.scrollWidth-2;n.classList.toggle('is-scrollable',s);}
+  chk();ul.addEventListener('scroll',chk);window.addEventListener('resize',chk);
+  // Auto-scroll active item into view
+  var a=ul.querySelector('a.active');if(a){a.scrollIntoView({inline:'center',block:'nearest'});}
+})();
+</script>
+</body>
+</html>
