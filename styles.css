@@ -52,29 +52,35 @@ body {
 .dossier-header__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 12px;
 }
 .dossier-header__brand {
   font-family: var(--serif);
   font-weight: 900;
-  font-size: 18px;
-  letter-spacing: 0.02em;
+  font-size: 17px;
+  letter-spacing: 0.01em;
   text-decoration: none;
   color: var(--paper);
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 .dossier-header__brand::before {
   content: "▮";
   color: var(--oxblood-soft);
   font-size: 22px;
   line-height: 1;
+  flex-shrink: 0;
+}
+.dossier-header__brand span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dossier-header__case {
   font-family: var(--mono);
@@ -82,21 +88,45 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(247,245,239,.55);
+  flex-shrink: 0;
+}
+@media (max-width: 540px) {
+  .dossier-header__case { display: none; }
+  .dossier-header__brand { font-size: 15px; }
 }
 
 nav.primary {
   background: var(--ink-2);
   border-bottom: 1px solid rgba(0,0,0,.4);
+  position: relative;
 }
+/* Right-edge fade indicator showing scroll affordance */
+nav.primary::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 32px;
+  background: linear-gradient(to right, transparent, var(--ink-2));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+nav.primary.is-scrollable::after { opacity: 1; }
 nav.primary ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
   display: flex;
-  flex-wrap: wrap;
   list-style: none;
   gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x proximity;
+  white-space: nowrap;
 }
+nav.primary ul::-webkit-scrollbar { display: none; }
+nav.primary li { flex: 0 0 auto; scroll-snap-align: start; }
 nav.primary a {
   display: inline-block;
   padding: 12px 16px;
@@ -107,6 +137,7 @@ nav.primary a {
   letter-spacing: 0.02em;
   border-bottom: 2px solid transparent;
   transition: all .15s ease;
+  white-space: nowrap;
 }
 nav.primary a:hover { color: var(--paper); background: rgba(247,245,239,.04); }
 nav.primary a.active {
@@ -371,6 +402,7 @@ ol.findings li::before {
   color: var(--ink-2);
   border-bottom: 2px solid var(--rule);
   font-weight: 600;
+  white-space: nowrap;
 }
 .ledger td {
   padding: 12px;
@@ -382,11 +414,32 @@ ol.findings li::before {
   font-family: var(--mono);
   text-align: right;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 .ledger tfoot td {
   font-weight: 700;
   background: var(--paper-2);
   border-top: 2px solid var(--ink);
+}
+/* Mobile: tables get a horizontal scroll container with right-edge fade */
+@media (max-width: 720px) {
+  .ledger {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    background-image:
+      linear-gradient(to right, var(--paper) 30%, rgba(247,245,239,0)),
+      linear-gradient(to right, rgba(247,245,239,0), var(--paper) 70%) 100% 0,
+      radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.12), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.12), transparent) 100% 0;
+    background-repeat: no-repeat;
+    background-color: var(--paper);
+    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-attachment: local, local, scroll, scroll;
+    font-size: 13px;
+  }
+  .ledger thead th, .ledger td { padding: 10px; }
 }
 
 /* ===== Pull quotes / callouts ===== */
@@ -527,8 +580,30 @@ hr.archive::after {
 
 /* ===== Mobile ===== */
 @media (max-width: 720px) {
-  .dossier { padding: 28px 18px 64px; }
-  nav.primary a { padding: 10px 12px; font-size: 12px; }
-  h2.section-title { font-size: 24px; }
+  .dossier { padding: 28px 16px 64px; }
+  nav.primary a { padding: 11px 14px; font-size: 13px; }
+  h2.section-title { font-size: 22px; }
+  h2.section-title::before { font-size: 11px; }
   .stat__value { font-size: 26px; }
+  .stat { padding: 18px 16px; }
+  .page-head h1 { font-size: 32px; }
+  .page-head__lede { font-size: 16px; }
+  .card { padding: 18px; }
+  .card__title { font-size: 17px; }
+  .pull { font-size: 17px; padding-left: 18px; }
+  .flow { padding: 16px; }
+  .flow__row { gap: 10px; }
+  .flow__node { min-width: 100%; }
+  .flow__arrow {
+    transform: rotate(90deg);
+    width: 100%;
+    text-align: center;
+  }
+  .stat-strip { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .dossier { padding: 24px 14px 56px; }
+  .page-head h1 { font-size: 28px; }
+  .stat__value { font-size: 24px; }
+  .card-grid { grid-template-columns: 1fr; }
 }

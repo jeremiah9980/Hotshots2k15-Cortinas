@@ -11,7 +11,7 @@
 
 <header class="dossier-header">
   <div class="dossier-header__inner">
-    <a href="index.html" class="dossier-header__brand">Hotshots 2K15 Intelligence Portal</a>
+    <a href="index.html" class="dossier-header__brand"><span>Hotshots 2K15 Intelligence Portal</span></a>
     <span class="dossier-header__case">Case File &middot; AHCTX&#8209;2025&#8209;001</span>
   </div>
 </header>
@@ -115,5 +115,16 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var n=document.querySelector('nav.primary');
+  var ul=n&&n.querySelector('ul');
+  if(!n||!ul)return;
+  function chk(){var s=ul.scrollLeft+ul.clientWidth<ul.scrollWidth-2;n.classList.toggle('is-scrollable',s);}
+  chk();ul.addEventListener('scroll',chk);window.addEventListener('resize',chk);
+  // Auto-scroll active item into view
+  var a=ul.querySelector('a.active');if(a){a.scrollIntoView({inline:'center',block:'nearest'});}
+})();
+</script>
 </body>
 </html>
