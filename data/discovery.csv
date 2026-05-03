@@ -1,0 +1,6 @@
+category,request,purpose,status
+Accounts,Chase account tied to Venmo,Verify total balance and inflows,outstanding
+Accounts,Nonprofit account statements,Track fundraising allocation,outstanding
+Dues,Player dues ledger,Verify monthly payments,outstanding
+Expenses,Tournament receipts,Validate expenses,outstanding
+Expenses,Field rental invoices,Confirm practice costs,outstanding
