@@ -1,0 +1,1 @@
+Fundraiser image assets converted from uploaded ZIP. Use GitHub UI or API blob upload for binary images.
